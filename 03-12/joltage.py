@@ -15,12 +15,8 @@ def main():
     for line in content:
         maxd = nextd = 0
         digits = list(map(int, line))
-        maxd = max(digits)
-        
+        maxd = max(digits[:-1])
         i = digits.index(maxd)
-        if i == len(digits)-1:
-            maxd = max(digits[:i])
-            i = digits.index(maxd)
 
         nextd = max(digits[i+1:])
         total = total + (maxd*10)+nextd
